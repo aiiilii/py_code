@@ -5,7 +5,32 @@ class ListNode:
 
 
 class AddTwoNumbers:
-    
+
+    def addTwoNumbers1(self, l1: ListNode, l2: ListNode) -> ListNode:
+        if not l1:
+            return l2
+        if not l2:
+            return l1
+        
+        carry = 0
+        dummy = l3 = ListNode()
+        
+        while l1 or l2 or carry:
+            val1 = val2 = 0
+            if l1:
+                val1 = l1.val
+                l1 = l1.next
+            if l2:
+                val2 = l2.val
+                l2 = l2.next
+            carry, val = divmod(val1 + val2 + carry, 10)
+            l3.next = ListNode(val)
+            l3 = l3.next
+            
+        return dummy.next
+
+
+
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         if not l1:
             return l2
