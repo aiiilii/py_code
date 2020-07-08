@@ -9,7 +9,7 @@ def reorderLogFiles(self, logs: List[str]) -> List[str]:
             letters.append(log)
 
     letters.sort(key = lambda x: x.split()[0]) # when suffix is tie, sort by identifier
-    letters.sort(key = lambda x: x.split()[1:]) # sort by suffix 
+    letters.sort(key = lambda x: x.split()[1:]) # sort by suffix that is after the identifier
     result = letters + digits # put digit logs after letter logs
 
     return result

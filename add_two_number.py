@@ -23,7 +23,7 @@ class AddTwoNumbers:
             if l2:
                 val2 = l2.val
                 l2 = l2.next
-            carry, val = divmod(val1 + val2 + carry, 10)
+            carry, val = divmod(val1 + val2 + carry, 10) # carry = div of 10, val = mod of 10
             l3.next = ListNode(val)
             l3 = l3.next
             
