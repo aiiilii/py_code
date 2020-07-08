@@ -18,7 +18,7 @@ class LRUCache:
     def append(self, key, val):
         self.cache[key] = val
         self.connect(self.before[self.tail], key) # append to the end
-        self.connect(key, self.tail)
+        self.connect(key, self.tail) # order of the argument matters
         if len(self.cache) > self.size:
             self.delete(self.next[self.head]) # delete the lru at the front
 
@@ -26,9 +26,9 @@ class LRUCache:
         if key not in self.cache:
             return -1
 
-        val = self.cache[key] 
-        self.delete(key)
-        self.append(key, val)
+        val = self.cache[key] # get the value
+        self.delete(key) # delete the previous encounter
+        self.append(key, val) # add it back
         return val
 
     def put(self, key: int, value: int) -> None:
