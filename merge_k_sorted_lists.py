@@ -11,7 +11,7 @@ class MergeKSortedLists:
     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
         dummy = ListNode()
         l3 = dummy
-        pq = queue.PriorityQueue()
+        pq = queue.PriorityQueue() # default is minheap
 
         for idx, node in enumerate(lists):
             if node:

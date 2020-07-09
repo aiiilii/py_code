@@ -21,4 +21,5 @@ class LongestPalindrome:
         while l >= 0 and r < len(s) and s[l] == s[r]:
             l -= 1 # move leftward from the left
             r += 1 #move rightward from the right
-        return s[l+1:r]
+
+        return s[l+1:r] # return what is before the end of the while loop on both the left and right sides

@@ -8,7 +8,7 @@ class LongestSubstring:
 
         for i, c in enumerate(s):
             if c in used and start <= used[c]:
-                start = used[c] + 1
+                start = used[c] + 1 # used[c] is the location of the previously stored c, it is not the current c we are looking at
             else:
                 max_length = max(max_length, i - start + 1)
 
