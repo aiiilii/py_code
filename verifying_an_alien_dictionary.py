@@ -15,7 +15,8 @@ class VerifyingAnAlienDictionary:
                     break # do not need to return false if the above if-statement is false, that means they letters do not equal at k,
                         # just break out and check the next two words
 
-            # for/else statement: else is called if the corresponding for loop does not hit a BREAK at any point.
+            # for/else statement: else is called if the corresponding for loop does not hit a BREAK at any point. 
+            # https://book.pythontips.com/en/latest/for_-_else.html
             else:
                 # If we didn't find a first difference, the
                 # words are like ("app", "apple").
