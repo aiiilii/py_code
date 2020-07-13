@@ -1,5 +1,6 @@
 class TopKFrequent:
 
+    # using dictionay - O(n log n)
     def topKFrequent(self, words: List[str], k: int) -> List[str]:
         dict = {}
         for x in words:
@@ -9,3 +10,6 @@ class TopKFrequent:
                 dict[x] = 1
         res = sorted(dict, key = lambda x: (-dict[x], x))
         return res[:k]
+
+    
+    #def topKFrequent1(self, words: List[str], k: int) -> List[str]:

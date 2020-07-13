@@ -1,3 +1,5 @@
+from typing import List
+
 class VerifyingAnAlienDictionary:
 
     def isAlienSorted(self, words: List[str], order: str) -> bool:
@@ -8,7 +10,7 @@ class VerifyingAnAlienDictionary:
             word2 = words[i + 1]
 
             # Find the first difference word1[k] != word2[k].
-            for k in range(min(len(word1), len(word2))):
+            for k in range(min(len(word1), len(word2))): # if the letters at k equal, then it would not go into the below if statement, it would go to the next k in the loop.
                 if word1[k] != word2[k]:
                     if order_index[word1[k]] > order_index[word2[k]]:
                         return False
@@ -24,3 +26,13 @@ class VerifyingAnAlienDictionary:
                     return False
 
         return True
+
+
+def main():
+    words = ["world","word","row"]
+    order = "worldabcefghijkmnpqstuvxyz"
+    alien = VerifyingAnAlienDictionary()
+    print(alien.isAlienSorted(words, order))
+
+if __name__ == "__main__":
+    main()
