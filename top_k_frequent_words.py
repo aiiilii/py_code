@@ -18,11 +18,11 @@ class TopKFrequent:
     
     # using heap - O(n + n log k)
     def topKFrequent1(self, words: List[str], k: int) -> List[str]:
-        count = collections.Counter(words)
+        count = collections.Counter(words) # put the words and the corresponding counts of that word in to a dictionary : {'word1': 1, 'word2': 3}
         heap = []
 
-        for key, val in count.items():
-            heapq.heappush(heap, Word(val, key))
+        for key, val in count.items(): # key is the word, val is the count
+            heapq.heappush(heap, Word(val, key)) # default is min heap
             if len(heap) > k:
                 heapq.heappop(heap)
         res = []
@@ -37,8 +37,9 @@ class Word:
 
     def __lt__(self, other):
         if self.freq == other.freq:
-            return self.word > other.word
-        return self.freq < other.freq
+            return self.word > other.word # max heap
+        return self.freq < other.freq # min heap
 
+    # not needed
     def __eq__(self, other):
         return self.freq == other.freq and self.word == other.word
