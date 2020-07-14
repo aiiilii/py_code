@@ -17,7 +17,7 @@ class KClosestPointsToOrigin:
         heap = []
 
         for x, y in points:
-            dist = -(x * x + y * y)
+            dist = -(x * x + y * y) # default is min heap, so use negative to create max heap
             if len(heap) == K:
                 heapq.heappushpop(heap, (dist, x, y))
             else:
