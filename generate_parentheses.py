@@ -1,3 +1,5 @@
+from typing import List
+
 class GenerateParentheses:
 
     def generateParenthesis(self, n: int) -> List[str]:

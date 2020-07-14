@@ -1,3 +1,5 @@
+from typing import List
+
 class SubarraySumEqualsK:
 
     # Whenever the sums has increased by a value of k, we've found a subarray of sums=k.

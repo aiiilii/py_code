@@ -1,3 +1,5 @@
+from typing import List
+
 class BestTimeToBuyAndSellStock:
 
     def maxProfit(self, prices: List[int]) -> int:

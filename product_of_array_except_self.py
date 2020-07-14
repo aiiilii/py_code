@@ -1,3 +1,5 @@
+from typing import List
+
 class ProductExceptSelf:
 
     def productExceptSelf(self, nums: List[int]) -> List[int]:

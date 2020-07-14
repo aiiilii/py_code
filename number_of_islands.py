@@ -1,3 +1,5 @@
+from typing import List
+
 class NumberOfIslands:
 
     def numIslands(self, grid: List[List[str]]) -> int:

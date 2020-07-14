@@ -1,3 +1,5 @@
+from typing import List
+
 class MaximumSubArray:
 
     # If the sum of a subarray is positive, it has possible to make the next value bigger, so we keep do it until it turn to negative.
