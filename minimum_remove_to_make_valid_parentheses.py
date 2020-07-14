@@ -9,13 +9,13 @@ class MinimumRemove:
                 continue
 
             if c == "(":
-                stack.append(c)
+                stack.append(i) # append the index into the stack
             elif not stack: # else if: c == ")" and stack is empty
                 indexes_to_remove.add(i)
             else: #else: c == ")" and stack is not empty
                 stack.pop()
 
-        indexes_to_remove = indexes_to_remove.union(set(stack))
+        indexes_to_remove = indexes_to_remove.union(set(stack)) # combine the indexes_to_remove indexes and the indexes left inside the stack
         string_builder = []
 
         for i, c in enumerate(s):
