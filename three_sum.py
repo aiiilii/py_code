@@ -9,7 +9,7 @@ class Sums:
 
         nums.sort()
 
-        for i in range(len(nums)):
+        for i in range(len(nums) - 2):
             if i == 0 or nums[i - 1] != nums[i]:
                 self.twoSum(nums, i, res)
 

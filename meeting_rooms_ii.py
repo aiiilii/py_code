@@ -20,9 +20,9 @@ class MeetingRoomsII:
         end_point = 0
 
         for i in range(len(start)):
-            if start[i] < end[end_point]:
+            if start[i] < end[end_point]: # if started a room before an end
                 res += 1
-            else:
+            else: # if not intercepting the previous start-end range
                 end_point += 1
 
         return res
