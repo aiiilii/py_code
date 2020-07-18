@@ -5,4 +5,4 @@ class ReverseInteger:
         # Otherwise, when x >0, [x<0] will be false, which is 0. Then, we will pick #0 element of [1,-1], which is '+1'.
         sign = [1, -1][x < 0]
         res = sign * int(str(abs(x))[::-1])
-        return res if -(2**31) - 1 < res < 2**31 else 0
+        return res if -(2**31) <= res <= (2**31) - 1 else 0
