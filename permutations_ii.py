@@ -6,7 +6,7 @@ class PermutationsII:
         
         def backtrack(nums, first=0):
             if first == n:
-                res.append(list(nums))
+                res.append(list(nums)) # can also use .append(nums[:])
                 return
 
             for i in range(first, n):
@@ -20,3 +20,12 @@ class PermutationsII:
         res = []
         backtrack(nums)
         return res
+
+
+def main():
+    nums = [1,2,1]
+    p = PermutationsII()
+    print(p.permuteUnique(nums))
+
+if __name__ == "__main__":
+    main()
