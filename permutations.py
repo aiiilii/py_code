@@ -41,3 +41,12 @@ class Permutation:
         res = []
         backtrack(nums)
         return res
+
+
+def main():
+    nums = [1,2,3]
+    p = Permutation()
+    print(p.permute(nums))
+
+if __name__ == "__main__":
+    main()
