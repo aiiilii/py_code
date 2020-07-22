@@ -6,7 +6,7 @@ class BasicCalculatorII:
 
         num = 0
         stack = []
-        sign = '+'
+        pre_sign = '+' # the previous sign
 
         for i in range(len(s)):
             ch = s[i]
@@ -16,15 +16,15 @@ class BasicCalculatorII:
 
             if s[i] in "+-*/" or i == len(s) - 1:
                 
-                if sign == '+':
+                if pre_sign == '+':
                     stack.append(num)
-                elif sign == '-':
+                elif pre_sign == '-':
                     stack.append(-num)
-                elif sign == '*':
+                elif pre_sign == '*':
                     stack.append(stack.pop() * num)
                 else:
                     stack.append(int(stack.pop() / num))
                 num = 0
-                sign = s[i]
+                pre_sign = s[i]
 
         return sum(stack)
