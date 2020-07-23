@@ -24,7 +24,7 @@ class MyHashMap:
             curr = self.hash[index]
             while True: # will at least execute once until reaches break when curr.next == None
                 if curr.pair[0] == key:
-                    curr.pair = (key, value)
+                    curr.pair = (key, value) # update the tuple by reassigning the entire tuple
                     return
                 if not curr.next:
                     break
