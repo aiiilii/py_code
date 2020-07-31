@@ -35,16 +35,16 @@ class WordDictionary:
 
 
     def dfs(self, node: TrieNode, word: str) -> None:
-        if not word:
-            if node.is_word:
+        if not word: # if word finished,
+            if node.is_word: # and node.is_word is true, then set self.res = true
                 self.res = True
-            return
+            return # return even if node.is_word is false, as long as word is finished
 
         if word[0] == '.':
             for n in node.children.values():
-                self.dfs(n, word[1:]) # always keep excluding the first letter, thus word[0] refers to the next letter
+                self.dfs(n, word[1:]) # always exclude the first letter, thus the next round word[0] refers to the next letter
         else:
             node = node.children.get(word[0])
-            if not node:
+            if not node: # if the next node is not there, then return
                 return
             self.dfs(node, word[1:])
